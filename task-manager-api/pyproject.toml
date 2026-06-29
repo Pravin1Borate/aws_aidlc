@@ -1,0 +1,25 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "unit: unit tests",
+    "integration: integration tests",
+    "pbt: property-based tests (Hypothesis)",
+]
+addopts = "--cov=src --cov-report=term-missing"
+
+[tool.coverage.run]
+source = ["src"]
+omit = ["tests/*", "*/conftest.py"]
+
+[tool.coverage.report]
+fail_under = 80
+
+[tool.hypothesis]
+suppress_health_check = ["too_slow"]
+deriving_default_profile = "dev"
+
+[tool.hypothesis.profiles.ci]
+max_examples = 200
+
+[tool.hypothesis.profiles.dev]
+max_examples = 50

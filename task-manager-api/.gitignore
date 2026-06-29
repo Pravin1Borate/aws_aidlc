@@ -1,0 +1,35 @@
+# Environment — never commit secrets
+.env
+.env.*
+!.env.example
+
+# Runtime data — never commit user data
+data/
+logs/
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+.eggs/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# mypy
+.mypy_cache/
